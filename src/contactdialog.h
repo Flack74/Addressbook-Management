@@ -11,16 +11,15 @@ class ContactDialog : public QDialog {
     Q_OBJECT
 
 public:
-    // Pass in a blank Contact for Add, or an existing one for Edit
     explicit ContactDialog(const Contact &contact, QWidget *parent = nullptr);
     ~ContactDialog();
 
-    Contact contact() const; // call this after exec() == Accepted
+    Contact contact() const;
 
 private slots:
-    void onAccepted();
+    void onSaveClicked();
 
 private:
     Ui::ContactDialog *ui;
-    Contact            m_contact; // holds the working copy
+    Contact            m_contact;
 };

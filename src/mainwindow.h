@@ -22,10 +22,11 @@ private slots:
     void onSelectionChanged();
 
 private:
-    Ui::MainWindow   *ui;
-    QList<Contact>    m_contacts; // in-memory copy of what's in the DB
+    Ui::MainWindow  *ui;
+    QList<Contact>   m_contacts;
 
     void loadContacts();
     void populateTable();
-    Contact *selectedContact(); // returns nullptr if nothing selected
+    void updateContactCount();
+    Contact *selectedContact();
 };
