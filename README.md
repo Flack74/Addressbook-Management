@@ -12,6 +12,17 @@ A simple contact management application built with Qt5 and C++.
 - Input validation for email addresses, phone numbers, and birthdays
 - Keyboard-friendly: Tab through fields, Enter to confirm
 
+## Screenshots
+
+**Contact list**
+![Contact list](screenshots/contacts.png)
+
+**Add contact**
+![Add contact](screenshots/add-contact.png)
+
+**Delete confirmation**
+![Delete confirmation](screenshots/delete-confirmation.png)
+
 ## Requirements
 
 - Debian GNU/Linux (tested on Debian 12 / Ubuntu 22.04+)
