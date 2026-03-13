@@ -1,0 +1,9 @@
+build/
+*.o
+*.a
+Makefile
+.qmake.stash
+addressbook
+moc_*
+ui_*
+*.db
