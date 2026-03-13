@@ -8,11 +8,14 @@ TEMPLATE = app
 INCLUDEPATH += ../src
 
 SOURCES += \
-    test_validator.cpp \
-    test_database.cpp \
+    main_test.cpp \
     ../src/validator.cpp \
     ../src/database.cpp \
     ../src/contact.cpp
+
+HEADERS += \
+    test_validator.h \
+    test_database.h
 
 OBJECTS_DIR = build/obj
 MOC_DIR     = build/moc

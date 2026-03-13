@@ -1,3 +1,4 @@
+#pragma once
 #include <QtTest>
 #include "../src/database.h"
 #include "../src/contact.h"
@@ -6,26 +7,21 @@ class TestDatabase : public QObject {
     Q_OBJECT
 
 private slots:
-    void initTestCase();   // runs once before all tests
+    void initTestCase();
     void cleanupTestCase();
-
     void testInsertAndFetch();
     void testUpdate();
     void testDelete();
 };
 
-void TestDatabase::initTestCase()
+inline void TestDatabase::initTestCase()
 {
-    // Use an in-memory SQLite database so tests don't leave files around
     QVERIFY(Database::init(":memory:"));
 }
 
-void TestDatabase::cleanupTestCase()
-{
-    // Nothing to clean up — in-memory DB disappears on its own
-}
+inline void TestDatabase::cleanupTestCase() {}
 
-void TestDatabase::testInsertAndFetch()
+inline void TestDatabase::testInsertAndFetch()
 {
     Contact c;
     c.name     = "Alice";
@@ -34,22 +30,19 @@ void TestDatabase::testInsertAndFetch()
     c.birthday = "1990-03-15";
 
     QVERIFY(Database::save(c));
-    QVERIFY(c.id > 0); // DB should have assigned a real ID
+    QVERIFY(c.id > 0);
 
     QList<Contact> all = Database::fetchAll();
     QVERIFY(!all.isEmpty());
 
     bool found = false;
     for (const Contact &x : all) {
-        if (x.id == c.id && x.name == "Alice") {
-            found = true;
-            break;
-        }
+        if (x.id == c.id && x.name == "Alice") { found = true; break; }
     }
     QVERIFY(found);
 }
 
-void TestDatabase::testUpdate()
+inline void TestDatabase::testUpdate()
 {
     Contact c;
     c.name  = "Bob";
@@ -70,7 +63,7 @@ void TestDatabase::testUpdate()
     QVERIFY(found);
 }
 
-void TestDatabase::testDelete()
+inline void TestDatabase::testDelete()
 {
     Contact c;
     c.name = "Temp Contact";
@@ -81,9 +74,6 @@ void TestDatabase::testDelete()
 
     QList<Contact> all = Database::fetchAll();
     for (const Contact &x : all) {
-        QVERIFY(x.id != id); // should not exist anymore
+        QVERIFY(x.id != id);
     }
 }
-
-QTEST_MAIN(TestDatabase)
-#include "test_database.moc"
