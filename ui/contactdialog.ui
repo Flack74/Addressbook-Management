@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ContactDialog</class>
+ <widget class="QDialog" name="ContactDialog">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>380</width><height>240</height></rect>
+  </property>
+  <layout class="QVBoxLayout">
+   <item>
+    <layout class="QFormLayout">
+     <item row="0" column="0"><widget class="QLabel" name="lblName"><property name="text"><string>Name *</string></property></widget></item>
+     <item row="0" column="1"><widget class="QLineEdit" name="editName"/></item>
+     <item row="1" column="0"><widget class="QLabel" name="lblMobile"><property name="text"><string>Mobile</string></property></widget></item>
+     <item row="1" column="1"><widget class="QLineEdit" name="editMobile"/></item>
+     <item row="2" column="0"><widget class="QLabel" name="lblEmail"><property name="text"><string>Email</string></property></widget></item>
+     <item row="2" column="1"><widget class="QLineEdit" name="editEmail"/></item>
+     <item row="3" column="0"><widget class="QLabel" name="lblBirthday"><property name="text"><string>Birthday</string></property></widget></item>
+     <item row="3" column="1"><widget class="QLineEdit" name="editBirthday"/></item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+</ui>
