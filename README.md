@@ -50,24 +50,36 @@ make
 ## Project Structure
 ```
 addressbook/
-├── src/
-│   ├── main.cpp            # entry point, database init
-│   ├── contact.h/cpp       # plain Contact data struct
-│   ├── database.h/cpp      # all SQLite operations
-│   ├── mainwindow.h/cpp    # main window, contact list
-│   ├── contactdialog.h/cpp # add/edit dialog
-│   └── validator.h/cpp     # email, phone, date validation
-├── ui/
-│   ├── mainwindow.ui       # main window layout
-│   └── contactdialog.ui    # dialog layout
-├── tests/
-│   ├── tests.pro
-│   ├── test_validator.cpp  # validator unit tests
-│   └── test_database.cpp   # database CRUD unit tests
+│
 ├── .github/
 │   └── workflows/
-│       └── build.yml       # CI build and test
+│       └── build.yml
+│
+├── src/
+│   ├── main.cpp
+│   ├── contact.h
+│   ├── contact.cpp
+│   ├── database.h
+│   ├── database.cpp
+│   ├── mainwindow.h
+│   ├── mainwindow.cpp
+│   ├── contactdialog.h
+│   ├── contactdialog.cpp
+│   ├── validator.h
+│   └── validator.cpp
+│
+├── ui/
+│   ├── mainwindow.ui
+│   └── contactdialog.ui
+│
+├── tests/
+│   ├── tests.pro
+│   ├── main_test.cpp       ← single entry point, runs both suites
+│   ├── test_validator.h    ← validator test class (no main)
+│   └── test_database.h     ← database test class (no main)
+│
 ├── addressbook.pro
+├── .gitignore
 └── README.md
 ```
 
